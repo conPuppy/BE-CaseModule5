@@ -23,14 +23,19 @@ public class PostController {
         return new ResponseEntity<>(iPostService.getAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Post> findPostById(@PathVariable Long id) {
+        return new ResponseEntity<>(iPostService.findPostById(id), HttpStatus.OK);
+    }
 
     @PostMapping
     public ResponseEntity<Post> save(@RequestBody Post post) {
         post.setDateTime(new Date().toString());
         return new ResponseEntity<>(iPostService.save(post), HttpStatus.CREATED);
     }
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id){
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         iPostService.deletePost(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

@@ -22,8 +22,8 @@ public class ImageService implements IImageService {
         return iImageRepo.save(image);
     }
     @Override
-    public Set<Image> getAllImgByPost(Post post) {
-        return iImageRepo.findImagesByPost(post);
+    public List<Image> getAllImgByPostId(Long idPost) {
+        return iImageRepo.findImagesByPostId(idPost);
     }
     @Override
     @Transactional

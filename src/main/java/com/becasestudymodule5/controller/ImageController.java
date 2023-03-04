@@ -24,8 +24,8 @@ public class ImageController {
         return new ResponseEntity<>(iImageService.getAllImg(),HttpStatus.OK);
     }
     @GetMapping("/{postId}")
-    public ResponseEntity<Set<Image>> getAllImgByPost(@PathVariable Long postId) {
-        return new ResponseEntity<>(iImageService.getAllImgByPost(iPostService.findPostById(postId)), HttpStatus.OK);
+    public ResponseEntity<List<Image>> getAllImgByPost(@PathVariable Long postId) {
+        return new ResponseEntity<>(iImageService.getAllImgByPostId(postId), HttpStatus.OK);
     }
     @PostMapping
     public ResponseEntity<Image> saveImg(@RequestBody Image image) {

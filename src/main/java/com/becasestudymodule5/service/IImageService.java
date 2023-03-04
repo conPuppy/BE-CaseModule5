@@ -11,7 +11,7 @@ public interface IImageService {
     Image save(Image image);
 
 
-    Set<Image> getAllImgByPost(Post post);
+    List<Image> getAllImgByPostId(Long idPost);
 
 
     void deleteImgAllByPost(Long id);
